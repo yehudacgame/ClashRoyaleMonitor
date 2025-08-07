@@ -19,11 +19,13 @@ class VisionProcessor {
     
     func processImage(_ ciImage: CIImage, completion: @escaping ([String]) -> Void) {
         guard performanceMonitor.checkMemoryUsage() else {
+            print("⚠️ VisionProcessor: Memory limit exceeded, dropping frame")
             performanceMonitor.recordFrameDrop()
             completion([])
             return
         }
         
+        print("🔍 VisionProcessor: Starting text recognition on image")
         let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -36,25 +38,33 @@ class VisionProcessor {
                     let observations = self.textRecognitionRequest.results ?? []
                     var recognizedStrings: [String] = []
                     
+                    print("🔍 VisionProcessor: Found \(observations.count) text observations")
+                    
                     for observation in observations {
-                        guard observation.confidence > 0.6 else { continue }
+                        guard observation.confidence > 0.6 else { 
+                            print("🔍 Skipping low confidence observation: \(observation.confidence)")
+                            continue 
+                        }
                         
                         let candidates = observation.topCandidates(1)
                         for candidate in candidates {
                             if candidate.confidence > 0.6 {
                                 let text = candidate.string.trimmingCharacters(in: .whitespacesAndNewlines)
                                 if !text.isEmpty {
+                                    print("🔍 Recognized text: '\(text)' (confidence: \(candidate.confidence))")
                                     recognizedStrings.append(text)
                                 }
                             }
                         }
                     }
                     
+                    print("🔍 VisionProcessor: Completed. Final text count: \(recognizedStrings.count)")
                     DispatchQueue.main.async {
                         completion(recognizedStrings)
                     }
                     
                 } catch {
+                    print("❌ VisionProcessor error: \(error.localizedDescription)")
                     DispatchQueue.main.async {
                         completion([])
                     }

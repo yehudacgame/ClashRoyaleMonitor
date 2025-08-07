@@ -6,6 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ClashRoyaleMonitor is an iOS app that uses ReplayKit and Vision Framework for real-time game monitoring and video highlight capture. Originally designed for Clash Royale tower detection, it has evolved into a COD Mobile kill detection system that automatically saves 10-second highlight videos when kills are detected.
 
+**Current Focus:** COD Mobile kill detection with hardware H.264 encoding and web-based UI.
+**Requirements:** iOS 14.0+, physical device required for ReplayKit testing.
+
 ## Build Commands
 
 ### iOS Project (Xcode-based)
@@ -150,9 +153,11 @@ private func triggerVideoSave() {
 - **ReplayKit**: Screen recording and broadcast extension framework
 - **Vision Framework**: OCR text recognition for kill detection
 - **AVFoundation**: Hardware H.264 video encoding
-- **SwiftUI + MVVM**: Modern declarative UI with ViewModels
+- **WKWebView**: Web-based UI hosting with JavaScript bridge
+- **SwiftUI + MVVM**: Modern declarative UI with ViewModels (legacy views)
 - **Core Data**: Local persistence with app groups
 - **App Groups**: Inter-process communication between main app and extension
+- **UserNotifications**: Local notifications for kill events
 
 ## Development Workflow
 
@@ -194,3 +199,39 @@ ClashRoyaleMonitor/
 - Rolling buffer management prevents memory accumulation
 - App Groups polling at 0.5s intervals for responsive kill detection
 - Cooldown systems prevent spam detection and consecutive saves
+
+## Web-Based UI Implementation (August 2025)
+
+**Architecture**: Replaced native SwiftUI with web-based HTML/CSS/JavaScript interface hosted in WKWebView.
+
+**Key Web UI Files:**
+- `ClashRoyaleMonitor/Resources/WebUI/index.html`: Main interface structure
+- `ClashRoyaleMonitor/Resources/WebUI/styles.css`: COD Mobile Battle Royale themed styling
+- `ClashRoyaleMonitor/Resources/WebUI/app.js`: JavaScript functionality and native bridge
+- `ClashRoyaleMonitor/App/ClashRoyaleMonitorApp.swift`: WKWebView host with WebViewController
+
+**JavaScript Bridge Communication:**
+```javascript
+// Web to Native
+window.webkit.messageHandlers.iosApp.postMessage({
+    action: 'startMonitoring', data: {}
+});
+
+// Native to Web (via evaluateJavaScript)
+window.updateKillCount(newCount);
+```
+
+**Web UI Features:**
+- Real-time kill/death statistics with session tracking
+- Video highlight management and playback
+- Military-themed UI with cyan/blue color scheme (#00d4ff, #00ff88, #ff6b6b)
+- Responsive design optimized for mobile devices
+- Native integration for file system access and app state management
+
+## Privacy & Security
+
+- All video processing happens locally on device
+- No screen content is stored or transmitted externally
+- Statistics stored locally using Core Data with App Groups
+- No external analytics, tracking, or cloud services
+- BLE communication (if applicable) uses standard pairing/encryption

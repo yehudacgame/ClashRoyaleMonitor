@@ -225,7 +225,7 @@ class WebViewController: UIViewController {
     private func startMonitoring() {
         // Show broadcast picker
         let picker = RPSystemBroadcastPickerView()
-        picker.preferredExtension = "com.clashmonitor.app.BroadcastExtension"
+        picker.preferredExtension = "com.clashmonitor.app2.BroadcastExtension2"
         picker.showsMicrophoneButton = false
         
         // Simulate button tap to show picker
