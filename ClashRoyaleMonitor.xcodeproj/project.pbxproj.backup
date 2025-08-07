@@ -1,0 +1,947 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+		05E7AB9BB3B474666F81EE23 /* Views/Settings/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E23F9D4592831933154C89 /* Views/Settings/SettingsView.swift */; };
+		0690C3272E3A875000985060 /* ../Shared/Models/TowerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D826A3D207DEF83CC9B37CE /* ../Shared/Models/TowerEvent.swift */; };
+		0693DA0103F0921FB1335302 /* Views/Onboarding/OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514CA3543E623A1E8C698824 /* Views/Onboarding/OnboardingView.swift */; };
+		0EFF8F09B25F05F91F9B36D0 /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A73D76FC92787513B781B4 /* PerformanceMonitor.swift */; };
+		1126F1171F411100E2D90007 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1352BE4402739EDEBBA4E1A8 /* UIKit.framework */; };
+		2FC295A037AA1D1020673233 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5820FCA3D8F2B420F7FC853 /* CoreData.framework */; };
+		380E582C1DB94A274373031A /* CoreData/TowerEventEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B31401F638B88E0F7EF548 /* CoreData/TowerEventEntity+CoreDataProperties.swift */; };
+		3C01921B428CD1F792293994 /* ViewModels/DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BA11D8EE62E234F6CD00E /* ViewModels/DashboardViewModel.swift */; };
+		3E62850710DE0C81CE74470E /* TowerDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1926EE669A9843187327D34 /* TowerDetectorTests.swift */; };
+		46CD097F6943993F60719D8B /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CA3B5084DAAEBAD569529F /* ReplayKit.framework */; };
+		48CECC5EBC53E1CDA2EB1069 /* PersistenceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1132A17C3C38EC7457F69A25 /* PersistenceControllerTests.swift */; };
+		495593F17FF1CA385ED9AAD3 /* TowerDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC19CB4192D7BB0C8539624 /* TowerDetector.swift */; };
+		4E8B3C427DCCBC93CA0216D6 /* App/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0E855C7E66E6D7109E795 /* App/ContentView.swift */; };
+		50EF038C1138399978BF9795 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B38BF4F9DEA207115224780 /* Vision.framework */; };
+		68DCF80959C0228EFF893644 /* CoreData/SessionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F824543C8BAB7AE87CA59DF /* CoreData/SessionEntity+CoreDataProperties.swift */; };
+		6A303D31FC729FFE11233DF0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C8DDD7C2FFD451D6CDD6E7 /* UserNotifications.framework */; };
+		6CDC1FD27FBE5720D51AF923 /* ViewModels/StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21C5194AF86B8305B54901 /* ViewModels/StatisticsViewModel.swift */; };
+		7D5CF520CC55605A6FFD3701 /* Views/Statistics/StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A2092F0F885375E4F707E9 /* Views/Statistics/StatisticsView.swift */; };
+		823DCD1A73C3DCAA0D4CE9DE /* CoreData/SessionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4AEF998A8A8F81E97AEE4 /* CoreData/SessionEntity+CoreDataClass.swift */; };
+		85E4240DBD2DDF21E7C7D2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A822D644CCD25BC18025B9 /* Foundation.framework */; };
+		9B87665D58580A0639433332 /* Services/NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9C83F05B049CC32957934 /* Services/NotificationManager.swift */; };
+		A5EFEAED1B8D4E610CC67CAB /* CoreData/TowerEventEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8D098914E9B09BBB89874 /* CoreData/TowerEventEntity+CoreDataClass.swift */; };
+		A9B3A7AA2BAE6767CE2D2F88 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF548EC6CF21F6093093366E /* SampleHandler.swift */; };
+		AAAA0014 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA0013 /* StringExtensions.swift */; };
+		AED8DA34B72408B87A313FE2 /* Views/Dashboard/DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F2444DCD0E020D86A056F5 /* Views/Dashboard/DashboardView.swift */; };
+		B8EC65A30ABD98005B015AE9 /* App/ClashRoyaleMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCB250EE1B776B9AF135A7E /* App/ClashRoyaleMonitorApp.swift */; };
+		C171F26FE94CC59E42CF39D7 /* CoreData/PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B37FB60FD4F26D9E3EFE8 /* CoreData/PersistenceController.swift */; };		C70001041F000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70001031F000003 /* Assets.xcassets */; };
+		C70001071F000004 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70001061F000004 /* Preview Assets.xcassets */; };
+		C70001091F000005 /* ClashRoyaleMonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C70001081F000005 /* ClashRoyaleMonitor.xcdatamodeld */; };
+		C70001131F000006 /* ClashRoyaleMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70001121F000006 /* ClashRoyaleMonitorTests.swift */; };
+		C700011D1F000007 /* ClashRoyaleMonitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700011C1F000007 /* ClashRoyaleMonitorUITests.swift */; };
+		C700011F1F000008 /* ClashRoyaleMonitorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700011E1F000008 /* ClashRoyaleMonitorUITestsLaunchTests.swift */; };		C70001341F00000A /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C700012D1F000009 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB02475A6D8F79BDE78E12C1 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBBC86639B90F397326F8C8 /* PerformanceTests.swift */; };
+		CFA62F574C4E66C037AFEBA1 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D43E3CADCEE622864A8A82 /* IntegrationTests.swift */; };
+		D678D5060A323DC791607335 /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D719F060909FBC8574014 /* NotificationManagerTests.swift */; };
+		DB57AE310E172D124AD7AC01 /* Views/Dashboard/BroadcastPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64699045459609373461EE27 /* Views/Dashboard/BroadcastPickerView.swift */; };
+		DFBB0DD396A7223918C59406 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2954AE8E2B50816A9812E2 /* SwiftUI.framework */; };
+		E35700DFB66F4AF2796A2C67 /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD0E125A364790622AC935 /* VisionProcessor.swift */; };
+		E84EA482DA70170A93D4F41D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6A69A296E22032794D79B /* CoreDataManager.swift */; };
+		D2BCE5C8B5A71DBF37D0D617 /* ClashRoyaleMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4267F9D9E808822CC2C1AC /* ClashRoyaleMonitorApp.swift */; };
+		061396A7FBD4289DB7F82988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF30A5B1DE18BBE218B2A2 /* ContentView.swift */; };
+		6BF5E78B1A5CE6FE36E4EDBE /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F18B6616BC52EC8E3ED76 /* DashboardView.swift */; };
+		494D3254EE7DF23E2BE7F4AF /* BroadcastPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF97BC7DFFD688E6F14B0D97 /* BroadcastPickerView.swift */; };
+		CCCA23A7B92DB5867DDB9485 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277D71DE0640E73A0EBAE204 /* StatisticsView.swift */; };
+		4E0C59333BB297B9BFBE2FA5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB693175BF74ED0B8783D8 /* SettingsView.swift */; };
+		C8899451563939944AC0089A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04FF86063ED77CDD5FD6F1 /* OnboardingView.swift */; };
+		B12461F11A5304905D40A9F2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DFC62E1988370F0AB05516 /* DashboardViewModel.swift */; };
+		ED5D9A2033511CB175088F12 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B7EF6D17F5D902B97A472C /* StatisticsViewModel.swift */; };
+		30E0DA9871807B1B31171957 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9322611CF776FC187A7826E /* NotificationManager.swift */; };
+		A01A9281E97BE6E1E8BA1E2C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AF28BD4E5216F7138E5482 /* PersistenceController.swift */; };
+		A457B2C1603C6DA4C52BCA55 /* SessionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380E76F1DC41D57B2653278 /* SessionEntity+CoreDataClass.swift */; };
+		8A4E6C85C0968418DC280904 /* SessionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E24430535E5B8274961770 /* SessionEntity+CoreDataProperties.swift */; };
+		E0FFE0858EAA258E93709BC8 /* TowerEventEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E76B282694809318BA9738 /* TowerEventEntity+CoreDataClass.swift */; };
+		4DBCB9AC3D4384B60CD76D1C /* TowerEventEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3D07CFEF39E4312649DCA /* TowerEventEntity+CoreDataProperties.swift */; };
+		9E4764AE2DE3C87B0248F5FB /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2AEEBE7440B0F085FC41DB /* SampleHandler.swift */; };
+		E2F63103A5538AC516276B5E /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F6A901D0DB19222611F2E /* VisionProcessor.swift */; };
+		01569C66C273D2195F74A9F4 /* TowerDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D9ADD6A7C1F9BBDFF2D92 /* TowerDetector.swift */; };
+		5D299114A77E28FD9D360DE0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47098D28094272712481C7 /* CoreDataManager.swift */; };
+		52983390EA758D70D2EAA7DC /* PerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4848D19764BCF198AE85E7C /* PerformanceMonitor.swift */; };
+		7E3B55D87E9A7A00DEA3C6A3 /* TowerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E3ABCFABEC6B8647C47BE0 /* TowerEvent.swift */; };
+		/* End PBXBuildFile section */
+/* Begin PBXContainerItemProxy section */
+		C700010F1F000006 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70000F41F000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70000FB1F000001;
+			remoteInfo = ClashRoyaleMonitor;
+		};
+		C70001191F000007 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70000F41F000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70000FB1F000001;
+			remoteInfo = ClashRoyaleMonitor;
+		};
+		C70001321F00000A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C70000F41F000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C700012C1F000009;
+			remoteInfo = BroadcastExtension;
+		};
+/* End PBXContainerItemProxy section */
+/* Begin PBXCopyFilesBuildPhase section */
+		C70001381F00000A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C70001341F00000A /* BroadcastExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+/* Begin PBXFileReference section */
+		05CA3B5084DAAEBAD569529F /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		06E23F9D4592831933154C89 /* Views/Settings/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Views/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		10A822D644CCD25BC18025B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1132A17C3C38EC7457F69A25 /* PersistenceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests/PersistenceControllerTests.swift; sourceTree = "<group>"; };
+		1352BE4402739EDEBBA4E1A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D826A3D207DEF83CC9B37CE /* ../Shared/Models/TowerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/TowerEvent.swift; sourceTree = "<group>"; };
+		1F824543C8BAB7AE87CA59DF /* CoreData/SessionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClashRoyaleMonitor/CoreData/SessionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		20C4AEF998A8A8F81E97AEE4 /* CoreData/SessionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClashRoyaleMonitor/CoreData/SessionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2F6D719F060909FBC8574014 /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests/NotificationManagerTests.swift; sourceTree = "<group>"; };
+		38B0E855C7E66E6D7109E795 /* App/ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/App/ContentView.swift; sourceTree = "<group>"; };
+		3D4B37FB60FD4F26D9E3EFE8 /* CoreData/PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/CoreData/PersistenceController.swift; sourceTree = "<group>"; };
+		45B6A69A296E22032794D79B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/CoreDataManager.swift; sourceTree = "<group>"; };
+		514CA3543E623A1E8C698824 /* Views/Onboarding/OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Views/Onboarding/OnboardingView.swift; sourceTree = "<group>"; };
+		55D43E3CADCEE622864A8A82 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests/IntegrationTests.swift; sourceTree = "<group>"; };
+		5B38BF4F9DEA207115224780 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		61A2092F0F885375E4F707E9 /* Views/Statistics/StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Views/Statistics/StatisticsView.swift; sourceTree = "<group>"; };
+		64699045459609373461EE27 /* Views/Dashboard/BroadcastPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Views/Dashboard/BroadcastPickerView.swift; sourceTree = "<group>"; };
+		69C8DDD7C2FFD451D6CDD6E7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		6F21C5194AF86B8305B54901 /* ViewModels/StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/ViewModels/StatisticsViewModel.swift; sourceTree = "<group>"; };
+		6F44314F7A2A9106E05181E1 /* ClashRoyaleMonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClashRoyaleMonitor.xcdatamodel; sourceTree = "<group>"; };
+		7DCB250EE1B776B9AF135A7E /* App/ClashRoyaleMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/App/ClashRoyaleMonitorApp.swift; sourceTree = "<group>"; };
+		91A73D76FC92787513B781B4 /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/PerformanceMonitor.swift; sourceTree = "<group>"; };
+		95E9C83F05B049CC32957934 /* Services/NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Services/NotificationManager.swift; sourceTree = "<group>"; };
+		A4BD0E125A364790622AC935 /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/VisionProcessor.swift; sourceTree = "<group>"; };
+		A5B31401F638B88E0F7EF548 /* CoreData/TowerEventEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClashRoyaleMonitor/CoreData/TowerEventEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AD2954AE8E2B50816A9812E2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AFE8D098914E9B09BBB89874 /* CoreData/TowerEventEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClashRoyaleMonitor/CoreData/TowerEventEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1926EE669A9843187327D34 /* TowerDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests/TowerDetectorTests.swift; sourceTree = "<group>"; };
+		C70000FC1F000001 /* ClashRoyaleMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClashRoyaleMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+				C70001031F000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ClashRoyaleMonitor/Assets.xcassets; sourceTree = "<group>"; };
+		C70001061F000004 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "ClashRoyaleMonitor/Preview Content/Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C700010E1F000006 /* ClashRoyaleMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClashRoyaleMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70001121F000006 /* ClashRoyaleMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests.swift; sourceTree = "<group>"; };
+		C70001181F000007 /* ClashRoyaleMonitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClashRoyaleMonitorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C700011C1F000007 /* ClashRoyaleMonitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorUITests.swift; sourceTree = "<group>"; };
+		C700011E1F000008 /* ClashRoyaleMonitorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C700012D1F000009 /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+				C70001311F00000A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BroadcastExtension/Info.plist; sourceTree = "<group>"; };
+		CA1BA11D8EE62E234F6CD00E /* ViewModels/DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/ViewModels/DashboardViewModel.swift; sourceTree = "<group>"; };
+		CFC19CB4192D7BB0C8539624 /* TowerDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/TowerDetector.swift; sourceTree = "<group>"; };
+		E5820FCA3D8F2B420F7FC853 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		ECBBC86639B90F397326F8C8 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitorTests/PerformanceTests.swift; sourceTree = "<group>"; };
+		EF548EC6CF21F6093093366E /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/SampleHandler.swift; sourceTree = "<group>"; };
+		AAAA0013 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastExtension/StringExtensions.swift; sourceTree = "<group>"; };
+		F0F2444DCD0E020D86A056F5 /* Views/Dashboard/DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClashRoyaleMonitor/Views/Dashboard/DashboardView.swift; sourceTree = "<group>"; };
+		ED4267F9D9E808822CC2C1AC /* ClashRoyaleMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/ClashRoyaleMonitorApp.swift"; sourceTree = "<group>"; };
+		A7FF30A5B1DE18BBE218B2A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App/ContentView.swift"; sourceTree = "<group>"; };
+		EF0F18B6616BC52EC8E3ED76 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Dashboard/DashboardView.swift"; sourceTree = "<group>"; };
+		BF97BC7DFFD688E6F14B0D97 /* BroadcastPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Dashboard/BroadcastPickerView.swift"; sourceTree = "<group>"; };
+		277D71DE0640E73A0EBAE204 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Statistics/StatisticsView.swift"; sourceTree = "<group>"; };
+		6BAB693175BF74ED0B8783D8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Settings/SettingsView.swift"; sourceTree = "<group>"; };
+		3B04FF86063ED77CDD5FD6F1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/Onboarding/OnboardingView.swift"; sourceTree = "<group>"; };
+		11DFC62E1988370F0AB05516 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModels/DashboardViewModel.swift"; sourceTree = "<group>"; };
+		35B7EF6D17F5D902B97A472C /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModels/StatisticsViewModel.swift"; sourceTree = "<group>"; };
+		D9322611CF776FC187A7826E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services/NotificationManager.swift"; sourceTree = "<group>"; };
+		31AF28BD4E5216F7138E5482 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/PersistenceController.swift"; sourceTree = "<group>"; };
+		6380E76F1DC41D57B2653278 /* SessionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/SessionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3E24430535E5B8274961770 /* SessionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/SessionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93E76B282694809318BA9738 /* TowerEventEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/TowerEventEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1FA3D07CFEF39E4312649DCA /* TowerEventEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData/TowerEventEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3F2AEEBE7440B0F085FC41DB /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SampleHandler.swift"; sourceTree = "<group>"; };
+		064F6A901D0DB19222611F2E /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisionProcessor.swift"; sourceTree = "<group>"; };
+		107D9ADD6A7C1F9BBDFF2D92 /* TowerDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TowerDetector.swift"; sourceTree = "<group>"; };
+		2C47098D28094272712481C7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager.swift"; sourceTree = "<group>"; };
+		E4848D19764BCF198AE85E7C /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PerformanceMonitor.swift"; sourceTree = "<group>"; };
+		72E3ABCFABEC6B8647C47BE0 /* TowerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "../Shared/Models/TowerEvent.swift"; sourceTree = "<group>"; };
+		8C6CA070D7855995093A9650 /* ClashRoyaleMonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClashRoyaleMonitor.xcdatamodel; sourceTree = "<group>"; };
+		/* End PBXFileReference section */
+/* Begin PBXFrameworksBuildPhase section */
+		C70000F91F000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFBB0DD396A7223918C59406 /* SwiftUI.framework in Frameworks */,
+				8BDCF719BE31110B8A78BF2A /* UserNotifications.framework in Frameworks */,
+				7728D97CD0CE1F46423DEE7C /* CoreData.framework in Frameworks */,
+				CE7F775F0B2BA951B35FD2ED /* Foundation.framework in Frameworks */,
+				1126F1171F411100E2D90007 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C700010B1F000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46CD097F6943993F60719D8B /* ReplayKit.framework in Frameworks */,
+				50EF038C1138399978BF9795 /* Vision.framework in Frameworks */,
+				2FC295A037AA1D1020673233 /* CoreData.framework in Frameworks */,
+				85E4240DBD2DDF21E7C7D2E8 /* Foundation.framework in Frameworks */,
+				6A303D31FC729FFE11233DF0 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70001151F000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C700012A1F000009 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+/* Begin PBXGroup section */
+		0690C3282E3A875000985060 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				7DCB250EE1B776B9AF135A7E /* App/ClashRoyaleMonitorApp.swift */,
+				38B0E855C7E66E6D7109E795 /* App/ContentView.swift */,
+				F0F2444DCD0E020D86A056F5 /* Views/Dashboard/DashboardView.swift */,
+				64699045459609373461EE27 /* Views/Dashboard/BroadcastPickerView.swift */,
+				61A2092F0F885375E4F707E9 /* Views/Statistics/StatisticsView.swift */,
+				06E23F9D4592831933154C89 /* Views/Settings/SettingsView.swift */,
+				514CA3543E623A1E8C698824 /* Views/Onboarding/OnboardingView.swift */,
+				CA1BA11D8EE62E234F6CD00E /* ViewModels/DashboardViewModel.swift */,
+				6F21C5194AF86B8305B54901 /* ViewModels/StatisticsViewModel.swift */,
+				95E9C83F05B049CC32957934 /* Services/NotificationManager.swift */,
+				3D4B37FB60FD4F26D9E3EFE8 /* CoreData/PersistenceController.swift */,
+				20C4AEF998A8A8F81E97AEE4 /* CoreData/SessionEntity+CoreDataClass.swift */,
+				1F824543C8BAB7AE87CA59DF /* CoreData/SessionEntity+CoreDataProperties.swift */,
+				AFE8D098914E9B09BBB89874 /* CoreData/TowerEventEntity+CoreDataClass.swift */,
+				A5B31401F638B88E0F7EF548 /* CoreData/TowerEventEntity+CoreDataProperties.swift */,
+				1D826A3D207DEF83CC9B37CE /* ../Shared/Models/TowerEvent.swift */,
+				AD2954AE8E2B50816A9812E2 /* SwiftUI.framework */,
+				69C8DDD7C2FFD451D6CDD6E7 /* UserNotifications.framework */,
+				E5820FCA3D8F2B420F7FC853 /* CoreData.framework */,
+				10A822D644CCD25BC18025B9 /* Foundation.framework */,
+				1352BE4402739EDEBBA4E1A8 /* UIKit.framework */,
+				EF548EC6CF21F6093093366E /* SampleHandler.swift */,
+				A4BD0E125A364790622AC935 /* VisionProcessor.swift */,
+				CFC19CB4192D7BB0C8539624 /* TowerDetector.swift */,
+				45B6A69A296E22032794D79B /* CoreDataManager.swift */,
+				91A73D76FC92787513B781B4 /* PerformanceMonitor.swift */,
+				B1926EE669A9843187327D34 /* TowerDetectorTests.swift */,
+				1132A17C3C38EC7457F69A25 /* PersistenceControllerTests.swift */,
+				2F6D719F060909FBC8574014 /* NotificationManagerTests.swift */,
+				ECBBC86639B90F397326F8C8 /* PerformanceTests.swift */,
+				55D43E3CADCEE622864A8A82 /* IntegrationTests.swift */,
+				05CA3B5084DAAEBAD569529F /* ReplayKit.framework */,
+				5B38BF4F9DEA207115224780 /* Vision.framework */,
+);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		C70000F31F000001 = {
+			isa = PBXGroup;
+			children = (
+				C70001111F000006 /* ClashRoyaleMonitorTests */,
+				C700011B1F000007 /* ClashRoyaleMonitorUITests */,
+				C700012E1F000009 /* BroadcastExtension */,
+				C70000FD1F000001 /* Products */,
+				0690C3282E3A875000985060 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		C700012E1F000009 /* BroadcastExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C70001311F00000A /* Info.plist */,
+			);
+			path = BroadcastExtension;
+			sourceTree = "<group>";
+		};
+		C70000FD1F000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C70000FC1F000001 /* ClashRoyaleMonitor.app */,
+				C700010E1F000006 /* ClashRoyaleMonitorTests.xctest */,
+				C70001181F000007 /* ClashRoyaleMonitorUITests.xctest */,
+				C700012D1F000009 /* BroadcastExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C70000FE1F000001 /* ClashRoyaleMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				C70000FF1F000001 /* ClashRoyaleMonitorApp.swift */,
+				C70001011F000002 /* ContentView.swift */,
+				C70001031F000003 /* Assets.xcassets */,
+				C70001081F000005 /* ClashRoyaleMonitor.xcdatamodeld */,
+				C70001051F000004 /* Preview Content */,
+			);
+			path = ClashRoyaleMonitor;
+			sourceTree = "<group>";
+		};
+		C70001051F000004 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C70001111F000006 /* ClashRoyaleMonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				C70001121F000006 /* ClashRoyaleMonitorTests.swift */,
+			);
+			path = ClashRoyaleMonitorTests;
+			sourceTree = "<group>";
+		};
+		C700011B1F000007 /* ClashRoyaleMonitorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C700011C1F000007 /* ClashRoyaleMonitorUITests.swift */,
+				C700011E1F000008 /* ClashRoyaleMonitorUITestsLaunchTests.swift */,
+			);
+			path = ClashRoyaleMonitorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+/* Begin PBXNativeTarget section */
+		C70000FB1F000001 /* ClashRoyaleMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70001221F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitor" */;
+			buildPhases = (
+				C70000F81F000001 /* Sources */,
+				C70000F91F000001 /* Frameworks */,
+				C70000FA1F000001 /* Resources */,
+				C70001381F00000A /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70001331F00000A /* PBXTargetDependency */,
+			);
+			name = ClashRoyaleMonitor;
+			productName = ClashRoyaleMonitor;
+			productReference = C70000FC1F000001 /* ClashRoyaleMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C700010D1F000006 /* ClashRoyaleMonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70001251F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitorTests" */;
+			buildPhases = (
+				C700010A1F000006 /* Sources */,
+				C700010B1F000006 /* Frameworks */,
+				C700010C1F000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70001101F000006 /* PBXTargetDependency */,
+			);
+			name = ClashRoyaleMonitorTests;
+			productName = ClashRoyaleMonitorTests;
+			productReference = C700010E1F000006 /* ClashRoyaleMonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C70001171F000007 /* ClashRoyaleMonitorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70001281F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitorUITests" */;
+			buildPhases = (
+				C70001141F000007 /* Sources */,
+				C70001151F000007 /* Frameworks */,
+				C70001161F000007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C700011A1F000007 /* PBXTargetDependency */,
+			);
+			name = ClashRoyaleMonitorUITests;
+			productName = ClashRoyaleMonitorUITests;
+			productReference = C70001181F000007 /* ClashRoyaleMonitorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C700012C1F000009 /* BroadcastExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70001351F00000A /* Build configuration list for PBXNativeTarget "BroadcastExtension" */;
+			buildPhases = (
+				C70001291F000009 /* Sources */,
+				C700012A1F000009 /* Frameworks */,
+				C700012B1F000009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BroadcastExtension;
+			productName = BroadcastExtension;
+			productReference = C700012D1F000009 /* BroadcastExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+		C70000F41F000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					C70000FB1F000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					C700010D1F000006 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C70000FB1F000001;
+					};
+					C70001171F000007 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = C70000FB1F000001;
+					};
+					C700012C1F000009 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = C70000F71F000001 /* Build configuration list for PBXProject "ClashRoyaleMonitor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C70000F31F000001;
+			productRefGroup = C70000FD1F000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C70000FB1F000001 /* ClashRoyaleMonitor */,
+				C700010D1F000006 /* ClashRoyaleMonitorTests */,
+				C70001171F000007 /* ClashRoyaleMonitorUITests */,
+				C700012C1F000009 /* BroadcastExtension */,
+			);
+		};
+/* End PBXProject section */
+/* Begin PBXResourcesBuildPhase section */
+		C70000FA1F000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70001071F000004 /* Preview Assets.xcassets in Resources */,
+				C70001041F000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C700010C1F000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70001161F000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C700012B1F000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		C70000F81F000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70001091F000005 /* ClashRoyaleMonitor.xcdatamodeld in Sources */,
+				B8EC65A30ABD98005B015AE9 /* App/ClashRoyaleMonitorApp.swift in Sources */,
+				4E8B3C427DCCBC93CA0216D6 /* App/ContentView.swift in Sources */,
+				AED8DA34B72408B87A313FE2 /* Views/Dashboard/DashboardView.swift in Sources */,
+				DB57AE310E172D124AD7AC01 /* Views/Dashboard/BroadcastPickerView.swift in Sources */,
+				7D5CF520CC55605A6FFD3701 /* Views/Statistics/StatisticsView.swift in Sources */,
+				05E7AB9BB3B474666F81EE23 /* Views/Settings/SettingsView.swift in Sources */,
+				0693DA0103F0921FB1335302 /* Views/Onboarding/OnboardingView.swift in Sources */,
+				3C01921B428CD1F792293994 /* ViewModels/DashboardViewModel.swift in Sources */,
+				6CDC1FD27FBE5720D51AF923 /* ViewModels/StatisticsViewModel.swift in Sources */,
+				9B87665D58580A0639433332 /* Services/NotificationManager.swift in Sources */,
+				C171F26FE94CC59E42CF39D7 /* CoreData/PersistenceController.swift in Sources */,
+				823DCD1A73C3DCAA0D4CE9DE /* CoreData/SessionEntity+CoreDataClass.swift in Sources */,
+				68DCF80959C0228EFF893644 /* CoreData/SessionEntity+CoreDataProperties.swift in Sources */,
+				A5EFEAED1B8D4E610CC67CAB /* CoreData/TowerEventEntity+CoreDataClass.swift in Sources */,
+				380E582C1DB94A274373031A /* CoreData/TowerEventEntity+CoreDataProperties.swift in Sources */,
+				796C112029811A076689074C /* ../Shared/Models/TowerEvent.swift in Sources */,
+				D2BCE5C8B5A71DBF37D0D617 /* ClashRoyaleMonitorApp.swift in Sources */,
+				061396A7FBD4289DB7F82988 /* ContentView.swift in Sources */,
+				6BF5E78B1A5CE6FE36E4EDBE /* DashboardView.swift in Sources */,
+				494D3254EE7DF23E2BE7F4AF /* BroadcastPickerView.swift in Sources */,
+				CCCA23A7B92DB5867DDB9485 /* StatisticsView.swift in Sources */,
+				4E0C59333BB297B9BFBE2FA5 /* SettingsView.swift in Sources */,
+				C8899451563939944AC0089A /* OnboardingView.swift in Sources */,
+				B12461F11A5304905D40A9F2 /* DashboardViewModel.swift in Sources */,
+				ED5D9A2033511CB175088F12 /* StatisticsViewModel.swift in Sources */,
+				30E0DA9871807B1B31171957 /* NotificationManager.swift in Sources */,
+				A01A9281E97BE6E1E8BA1E2C /* PersistenceController.swift in Sources */,
+				A457B2C1603C6DA4C52BCA55 /* SessionEntity+CoreDataClass.swift in Sources */,
+				8A4E6C85C0968418DC280904 /* SessionEntity+CoreDataProperties.swift in Sources */,
+				E0FFE0858EAA258E93709BC8 /* TowerEventEntity+CoreDataClass.swift in Sources */,
+				4DBCB9AC3D4384B60CD76D1C /* TowerEventEntity+CoreDataProperties.swift in Sources */,
+				7E3B55D87E9A7A00DEA3C6A3 /* TowerEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C700010A1F000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70001131F000006 /* ClashRoyaleMonitorTests.swift in Sources */,
+				A9B3A7AA2BAE6767CE2D2F88 /* SampleHandler.swift in Sources */,
+				E35700DFB66F4AF2796A2C67 /* VisionProcessor.swift in Sources */,
+				495593F17FF1CA385ED9AAD3 /* TowerDetector.swift in Sources */,
+				E84EA482DA70170A93D4F41D /* CoreDataManager.swift in Sources */,
+				0EFF8F09B25F05F91F9B36D0 /* PerformanceMonitor.swift in Sources */,
+				0690C3272E3A875000985060 /* ../Shared/Models/TowerEvent.swift in Sources */,
+				3E62850710DE0C81CE74470E /* TowerDetectorTests.swift in Sources */,
+				48CECC5EBC53E1CDA2EB1069 /* PersistenceControllerTests.swift in Sources */,
+				D678D5060A323DC791607335 /* NotificationManagerTests.swift in Sources */,
+				CB02475A6D8F79BDE78E12C1 /* PerformanceTests.swift in Sources */,
+				CFA62F574C4E66C037AFEBA1 /* IntegrationTests.swift in Sources */,
+				9E4764AE2DE3C87B0248F5FB /* SampleHandler.swift in Sources */,
+				E2F63103A5538AC516276B5E /* VisionProcessor.swift in Sources */,
+				01569C66C273D2195F74A9F4 /* TowerDetector.swift in Sources */,
+				5D299114A77E28FD9D360DE0 /* CoreDataManager.swift in Sources */,
+				52983390EA758D70D2EAA7DC /* PerformanceMonitor.swift in Sources */,
+				7E3B55D87E9A7A00DEA3C6A3 /* TowerEvent.swift in Sources */,
+				AAAA0014 /* StringExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70001141F000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C700011F1F000008 /* ClashRoyaleMonitorUITestsLaunchTests.swift in Sources */,
+				C700011D1F000007 /* ClashRoyaleMonitorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70001291F000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B3A7AA2BAE6767CE2D2F88 /* SampleHandler.swift in Sources */,
+				E35700DFB66F4AF2796A2C67 /* VisionProcessor.swift in Sources */,
+				495593F17FF1CA385ED9AAD3 /* TowerDetector.swift in Sources */,
+				E84EA482DA70170A93D4F41D /* CoreDataManager.swift in Sources */,
+				0EFF8F09B25F05F91F9B36D0 /* PerformanceMonitor.swift in Sources */,
+				0690C3272E3A875000985060 /* ../Shared/Models/TowerEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+/* Begin PBXTargetDependency section */
+		C70001101F000006 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70000FB1F000001 /* ClashRoyaleMonitor */;
+			targetProxy = C700010F1F000006 /* PBXContainerItemProxy */;
+		};
+		C700011A1F000007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70000FB1F000001 /* ClashRoyaleMonitor */;
+			targetProxy = C70001191F000007 /* PBXContainerItemProxy */;
+		};
+		C70001331F00000A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C700012C1F000009 /* BroadcastExtension */;
+			targetProxy = C70001321F00000A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+/* Begin XCBuildConfiguration section */
+		C70001201F000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C70001211F000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C70001231F000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ClashRoyaleMonitor/ClashRoyaleMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClashRoyaleMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = 239AYYDJ8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClashRoyaleMonitor/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C70001241F000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ClashRoyaleMonitor/ClashRoyaleMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClashRoyaleMonitor/Preview Content\"";
+				DEVELOPMENT_TEAM = 239AYYDJ8S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClashRoyaleMonitor/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C70001261F000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.ClashRoyaleMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClashRoyaleMonitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClashRoyaleMonitor";
+			};
+			name = Debug;
+		};
+		C70001271F000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.ClashRoyaleMonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClashRoyaleMonitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClashRoyaleMonitor";
+			};
+			name = Release;
+		};
+		C70001291F000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.ClashRoyaleMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClashRoyaleMonitor;
+			};
+			name = Debug;
+		};
+		C700012A1F000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.ClashRoyaleMonitorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ClashRoyaleMonitor;
+			};
+			name = Release;
+		};
+		C70001361F00000A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 239AYYDJ8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroadcastExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ClashRoyale Monitor";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.BroadcastExtension2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C70001371F00000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 239AYYDJ8S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BroadcastExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ClashRoyale Monitor";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clashmonitor.app2.BroadcastExtension2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+		C70000F71F000001 /* Build configuration list for PBXProject "ClashRoyaleMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70001201F000008 /* Debug */,
+				C70001211F000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70001221F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70001231F000008 /* Debug */,
+				C70001241F000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70001251F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70001261F000008 /* Debug */,
+				C70001271F000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70001281F000008 /* Build configuration list for PBXNativeTarget "ClashRoyaleMonitorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70001291F000008 /* Debug */,
+				C700012A1F000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C70001351F00000A /* Build configuration list for PBXNativeTarget "BroadcastExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70001361F00000A /* Debug */,
+				C70001371F00000A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+/* Begin XCVersionGroup section */
+		C70001081F000005 /* ClashRoyaleMonitor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F44314F7A2A9106E05181E1 /* ClashRoyaleMonitor.xcdatamodel */,
+				8C6CA070D7855995093A9650 /* ClashRoyaleMonitor.xcdatamodel */,
+			);
+			currentVersion = 6F44314F7A2A9106E05181E1 /* ClashRoyaleMonitor.xcdatamodel */;
+			path = ClashRoyaleMonitor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C70000F41F000001 /* Project object */;
+}

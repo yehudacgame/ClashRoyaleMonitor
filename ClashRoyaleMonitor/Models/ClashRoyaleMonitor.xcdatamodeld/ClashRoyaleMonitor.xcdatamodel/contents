@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SessionEntity" representedClassName="SessionEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="playerTowersLost" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="enemyTowersDestroyed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="towerEvents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TowerEventEntity" inverseName="session" inverseEntity="TowerEventEntity"/>
+    </entity>
+    <entity name="TowerEventEntity" representedClassName="TowerEventEntity" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="towerType" attributeType="String"/>
+        <attribute name="isPlayerTower" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SessionEntity" inverseName="towerEvents" inverseEntity="SessionEntity"/>
+    </entity>
+</model>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>COD Kill Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔫 COD KILL MONITOR 🔫</h1>
+            <div class="status-indicator">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Monitoring Inactive</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Session Stats</h3>
+                    <div class="stat-row">
+                        <span class="stat-label">Duration:</span>
+                        <span class="stat-value" id="sessionDuration">00:00</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Kills:</span>
+                        <span class="stat-value kills" id="killCount">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Deaths:</span>
+                        <span class="stat-value deaths" id="deathCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="startMonitoring">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    Start Monitoring
+                </button>
+                
+                <button class="btn btn-secondary" id="launchGame">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                    Launch Call of Duty
+                </button>
+            </div>
+
+            <div class="highlights-section">
+                <h2>Kill Highlights</h2>
+                <div id="videoList" class="video-list">
+                    <div class="empty-state">
+                        <svg class="empty-icon" viewBox="0 0 24 24">
+                            <path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/>
+                        </svg>
+                        <p>No kill highlights yet</p>
+                        <p class="empty-subtitle">Highlights will appear here when kills are detected</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-events">
+                <h3>Recent Events</h3>
+                <div id="eventsList" class="events-list">
+                    <div class="empty-state-small">No events yet</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="videoPlayer" class="video-player-modal hidden">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeVideoPlayer()">×</button>
+            <video id="videoElement" controls></video>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

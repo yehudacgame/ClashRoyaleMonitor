@@ -1,0 +1,63 @@
+{
+  "app_info": {
+    "name": "ClashRoyale Tower Monitor",
+    "subtitle": "Real-time tower tracking for Clash Royale",
+    "bundle_id": "com.clashmonitor.app",
+    "version": "1.0.0",
+    "build": "1",
+    "category": "Utilities",
+    "secondary_category": "Games",
+    "content_rating": "4+",
+    "copyright": "© 2025 ClashRoyale Tower Monitor"
+  },
+  "pricing": {
+    "price_tier": "Free",
+    "availability": "All countries except China"
+  },
+  "app_review_information": {
+    "contact_email": "review@clashmonitor.app",
+    "contact_phone": "+1-555-MONITOR",
+    "demo_account_required": false,
+    "notes": "This app requires Clash Royale to be installed for full functionality. The app uses iOS screen recording to detect game events locally on device. No external accounts or services are required."
+  },
+  "localizations": {
+    "en-US": {
+      "name": "ClashRoyale Tower Monitor",
+      "subtitle": "Real-time tower tracking for Clash Royale",
+      "promotional_text": "Never miss a tower destruction again! Get instant notifications and track your Clash Royale performance.",
+      "keywords": "clash royale,tower,monitor,gaming,statistics,tracker,supercell,mobile games,notifications,real-time,analytics,performance,companion app,screen recording,gaming utility"
+    },
+    "es": {
+      "name": "ClashRoyale Monitor de Torres",
+      "subtitle": "Seguimiento de torres en tiempo real",
+      "promotional_text": "¡Nunca te pierdas la destrucción de una torre! Recibe notificaciones instantáneas y rastrea tu rendimiento.",
+      "keywords": "clash royale,torre,monitor,juegos,estadísticas,rastreador,supercell,juegos móviles,notificaciones,tiempo real,análisis,rendimiento"
+    },
+    "fr": {
+      "name": "ClashRoyale Moniteur de Tours",
+      "subtitle": "Suivi des tours en temps réel",
+      "promotional_text": "Ne ratez jamais une destruction de tour ! Recevez des notifications instantanées et suivez vos performances.",
+      "keywords": "clash royale,tour,moniteur,jeux,statistiques,traqueur,supercell,jeux mobiles,notifications,temps réel,analyse,performance"
+    }
+  },
+  "screenshots": {
+    "iphone_6_7": [
+      "dashboard_main.png",
+      "onboarding_setup.png",
+      "statistics_view.png",
+      "notification_example.png",
+      "settings_panel.png"
+    ],
+    "iphone_6_5": [
+      "dashboard_main_65.png",
+      "onboarding_setup_65.png",
+      "statistics_view_65.png",
+      "notification_example_65.png",
+      "settings_panel_65.png"
+    ]
+  },
+  "app_preview_videos": {
+    "iphone_6_7": "app_preview_67.mp4",
+    "iphone_6_5": "app_preview_65.mp4"
+  }
+}
