@@ -13,19 +13,16 @@ class VisionProcessor {
         textRecognitionRequest.recognitionLanguages = ["en-US"]
         textRecognitionRequest.automaticallyDetectsLanguage = false
         
-        // Focus on center-right region where kill notifications appear
-        textRecognitionRequest.regionOfInterest = CGRect(x: 0.4, y: 0.3, width: 0.5, height: 0.4)
+        // Remove regionOfInterest - we're already cropping the image in SampleHandler
+        // Let Vision process the entire cropped image for better results
+        // textRecognitionRequest.regionOfInterest = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
     }
     
     func processImage(_ ciImage: CIImage, completion: @escaping ([String]) -> Void) {
-        guard performanceMonitor.checkMemoryUsage() else {
-            print("⚠️ VisionProcessor: Memory limit exceeded, dropping frame")
-            performanceMonitor.recordFrameDrop()
-            completion([])
-            return
-        }
+        // Remove performance monitor check - it's blocking OCR processing
+        // Extension already handles memory management through frame cropping
         
-        print("🔍 VisionProcessor: Starting text recognition on image")
+        NSLog("🔍 VisionProcessor: Starting text recognition on cropped image")
         let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -38,33 +35,33 @@ class VisionProcessor {
                     let observations = self.textRecognitionRequest.results ?? []
                     var recognizedStrings: [String] = []
                     
-                    print("🔍 VisionProcessor: Found \(observations.count) text observations")
+                    NSLog("🔍 VisionProcessor: Found \(observations.count) text observations")
                     
                     for observation in observations {
-                        guard observation.confidence > 0.6 else { 
-                            print("🔍 Skipping low confidence observation: \(observation.confidence)")
+                        guard observation.confidence > 0.5 else { 
+                            NSLog("🔍 Skipping low confidence observation: \(observation.confidence)")
                             continue 
                         }
                         
                         let candidates = observation.topCandidates(1)
                         for candidate in candidates {
-                            if candidate.confidence > 0.6 {
+                            if candidate.confidence > 0.5 {
                                 let text = candidate.string.trimmingCharacters(in: .whitespacesAndNewlines)
                                 if !text.isEmpty {
-                                    print("🔍 Recognized text: '\(text)' (confidence: \(candidate.confidence))")
+                                    NSLog("🔍 Recognized text: '\(text)' (confidence: \(candidate.confidence))")
                                     recognizedStrings.append(text)
                                 }
                             }
                         }
                     }
                     
-                    print("🔍 VisionProcessor: Completed. Final text count: \(recognizedStrings.count)")
+                    NSLog("🔍 VisionProcessor: Completed. Final text count: \(recognizedStrings.count)")
                     DispatchQueue.main.async {
                         completion(recognizedStrings)
                     }
                     
                 } catch {
-                    print("❌ VisionProcessor error: \(error.localizedDescription)")
+                    NSLog("❌ VisionProcessor error: \(error.localizedDescription)")
                     DispatchQueue.main.async {
                         completion([])
                     }

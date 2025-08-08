@@ -7,6 +7,10 @@ class AppState: ObservableObject {
     @Published var isMonitoring = false
     @Published var currentTab = 0
     
+    init() {
+        print("🚀 AppState initialized")
+    }
+    
     func checkBroadcastStatus() {
         // Check if broadcast extension is active
         let sharedDefaults = UserDefaults(suiteName: "group.com.clashmonitor.shared2")

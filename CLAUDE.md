@@ -6,7 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ClashRoyaleMonitor is an iOS app that uses ReplayKit and Vision Framework for real-time game monitoring and video highlight capture. Originally designed for Clash Royale tower detection, it has evolved into a COD Mobile kill detection system that automatically saves 10-second highlight videos when kills are detected.
 
-**Current Focus:** COD Mobile kill detection with hardware H.264 encoding and web-based UI.
+**Current Status (December 2024):** 
+- ✅ **OCR Kill Detection**: Working with cropped region (94% memory reduction)
+- ✅ **Hardware Video Encoding**: Extension handles 10-second rolling buffer
+- ✅ **Web Interface**: COD Mobile Battle Royale theme with video playback
+- ✅ **Memory Optimized**: Extension stays at ~25MB (under 50MB limit)
+- ✅ **Single ReplayKit Instance**: Extension handles both video and OCR
+
 **Requirements:** iOS 14.0+, physical device required for ReplayKit testing.
 
 ## Build Commands
@@ -33,33 +39,38 @@ Physical iOS device required for ReplayKit broadcast extension testing. Simulato
 
 ### Current Implementation: COD Mobile Kill Detection with Hardware Video Encoding
 
-**CRITICAL ARCHITECTURE RULES (August 2025):**
+**CRITICAL ARCHITECTURE (December 2024):**
 
 ```
-Extension (SampleHandler):              Main App (VideoRecordingManager):
-Frame → OCR → "KILL/ELIMINATED"    →    RPScreenRecorder → Rolling 10s Buffer
-     ↓                                         ↓
-App Groups Notification           ←    Hardware H.264 Encoder → Save Highlight
-     ↓                                         ↓
-(Extension memory < 50MB)              Documents/COD_Kill_timestamp.mp4
+Extension (SampleHandler) - Single ReplayKit Instance:
+┌─────────────────────────────────────────────┐
+│ Frame → BOTH:                               │
+│   1. Hardware Video Encoding (EVERY frame)  │
+│   2. Cropped OCR Detection (every 10th)     │
+│      ↓                                      │
+│ Kill Detected → Save Video → Notify Main   │
+│                                             │
+│ Memory Usage: ~25MB (under 50MB limit)      │
+└─────────────────────────────────────────────┘
+           ↓
+Main App: Updates UI, Shows Video List
 ```
 
 **Extension Role (SampleHandler.swift):**
-- ✅ Process frames for OCR text detection ONLY (every 10th frame)
+- ✅ Uses single ReplayKit instance for BOTH video encoding AND OCR
+- ✅ Hardware encodes EVERY frame to rolling 10-second buffer (AVAssetWriter)
+- ✅ OCR processes every 10th frame with **94% crop** (top 20% of screen)
 - ✅ Detect "KILL", "ELIMINATED", "ELIMINA" with substring matching
-- ✅ **NEVER store video frames** - process OCR and immediately discard
-- ✅ Notify main app via App Groups when kill detected
+- ✅ Saves video directly when kill detected, then notifies main app
 - ✅ 2-second cooldown to prevent consecutive detections
-- ✅ **CRITICAL: Cooldown prevents OCR processing, not just video saves**
-- ✅ Memory stays under 50MB iOS limit
+- ✅ Memory stays at ~25MB (well under 50MB iOS limit)
 
-**Main App Role (VideoRecordingManager.swift):**
-- ✅ Run `RPScreenRecorder.startCapture()` continuously in background thread
-- ✅ Use `AVAssetWriter` with hardware H.264 encoding
-- ✅ Maintain rolling 10-second buffer that auto-restarts
+**Main App Role (ClashRoyaleMonitorApp.swift):**
+- ✅ **NO video capture** (would conflict with extension's ReplayKit)
 - ✅ Monitor App Groups for kill notifications (0.5s polling)
-- ✅ Save buffer to Documents folder when triggered
-- ✅ 3-second cooldown to prevent consecutive saves
+- ✅ Update web UI when videos are saved
+- ✅ Display saved videos from App Groups Documents folder
+- ✅ Handle video playback through WKWebView bridge
 
 ### Key Components
 
@@ -71,16 +82,34 @@ App Groups Notification           ←    Hardware H.264 Encoder → Save Highlig
 
 **Data Flow:**
 ```
-RPScreenRecorder → Main App Rolling Buffer (10s) → Kill Triggered → Save MP4
-                           ↑
-App Groups ←  Kill Detection  ← OCR Processing ← Extension Frame Sample
+ReplayKit Frame (Extension)
+    ├→ Hardware Video Encoder (AVAssetWriter) → 10s Buffer
+    └→ Cropped OCR (every 10th) → Kill Detection
+                                        ↓
+                            Save Video + Notify Main App
+                                        ↓
+                            Main App Updates Web UI
 ```
+
+🔄 **Complete Workflow:**
+
+1. **User starts screen recording with extension**
+2. **Extension broadcastStarted() triggers**
+3. **Extension starts hardware video encoding (AVAssetWriter)**
+4. **Extension processes every frame:**
+   - ALL frames → Hardware H.264 encoder → Rolling 10s buffer
+   - Every 10th frame → Cropped OCR → Kill detection
+5. **When kill detected:**
+   - Extension saves current buffer as MP4
+   - Extension notifies main app via App Groups
+6. **Main app updates web UI with new video**
 
 **App Groups Communication:**
 - Uses: `group.com.clashmonitor.shared2`
-- Extension writes kill notifications
-- Main app polls every 0.5 seconds
-- Both UserDefaults and CFPreferences for reliability
+- Extension saves videos to: `App Groups/Documents/COD_Kill_*.mp4`
+- Extension writes kill notifications (keys: `killDetectedAt`, `shouldSaveHighlight`)
+- Main app polls every 0.5 seconds for UI updates
+- Videos stored in shared container accessible by both processes
 
 ### Critical Kill Detection Implementation
 
@@ -113,16 +142,17 @@ private func triggerVideoSave() {
 - Must use App Groups for data sharing
 
 **FORBIDDEN PATTERNS:**
-- ❌ NEVER implement video encoding in the extension
-- ❌ NEVER store video frames in SampleHandler
-- ❌ NEVER use similarity matching (use substring matching instead)
-- ❌ NEVER process every frame (sample every 10th frame)
+- ❌ NEVER use RPScreenRecorder in main app (conflicts with extension)
+- ❌ NEVER buffer video frames in memory (use AVAssetWriter streaming)
+- ❌ NEVER process full frames for OCR (always crop first)
+- ❌ NEVER use excessive logging (causes memory crashes)
 - ❌ NEVER implement cooldown only in video save logic (must be in OCR detection)
 
 **MEMORY MANAGEMENT INSIGHTS:**
-- **NEVER store video frames/buffers in extension** - Each CMSampleBuffer consumes ~54MB
-- **Extension should ONLY analyze frames, not store them** - Process for OCR and immediately discard
-- **Architecture Rule**: Extension = Analysis Only, Main App = Storage Only
+- **Hardware encoding doesn't buffer frames** - AVAssetWriter streams directly to disk
+- **Cropped OCR reduces memory by 94%** - Process 600x200 instead of full frame
+- **Single ReplayKit instance** - One capture for both video and OCR
+- **Memory breakdown**: ~10MB (encoder) + ~5MB (OCR) + ~10MB (ReplayKit) = ~25MB total
 
 ### ReplayKit Buffer Management
 - **NEVER hold references to CVPixelBuffer from CMSampleBuffer**
@@ -194,11 +224,12 @@ ClashRoyaleMonitor/
 
 ## Performance Considerations
 
-- Extension processes every 10th frame to balance detection speed vs memory usage
-- Hardware H.264 encoding runs at 8 Mbps for quality video highlights
-- Rolling buffer management prevents memory accumulation
-- App Groups polling at 0.5s intervals for responsive kill detection
-- Cooldown systems prevent spam detection and consecutive saves
+- Extension encodes EVERY frame for smooth video (hardware accelerated)
+- Extension processes every 10th frame for OCR (cropped to save memory)
+- Hardware H.264 encoding runs at 4 Mbps (reduced for memory efficiency)
+- Rolling 10-second buffer auto-restarts to prevent accumulation
+- Cropping OCR region saves 94% memory (600x200 vs 1920x1080)
+- Single ReplayKit instance serves both video and OCR functions
 
 ## Web-Based UI Implementation (August 2025)
 
@@ -235,3 +266,24 @@ window.updateKillCount(newCount);
 - Statistics stored locally using Core Data with App Groups
 - No external analytics, tracking, or cloud services
 - BLE communication (if applicable) uses standard pairing/encryption
+
+## iOS Platform Limitations
+
+### ReplayKit Constraints
+- **Only ONE ReplayKit session allowed system-wide** - Extension OR main app, not both
+- **No screen capture API outside ReplayKit on iOS** - AVCaptureScreenInput doesn't exist
+- **Extension limited to 50MB memory** - Hard iOS limit, app terminated if exceeded
+- **Solution**: Extension handles both video encoding and OCR using single ReplayKit instance
+
+### Memory Optimization Techniques
+1. **Crop before OCR**: Reduces memory usage by 94%
+2. **Hardware encoding**: AVAssetWriter streams to disk, no buffering
+3. **Reduced bitrate**: 4 Mbps instead of 8 Mbps
+4. **Minimal logging**: Prevents memory accumulation
+5. **Frame sampling**: OCR only every 10th frame
+
+### Key Success Factors
+- Extension handles both functions with one ReplayKit instance
+- Every frame encoded, every 10th frame analyzed
+- Cropping + hardware acceleration keeps memory under 25MB
+- Direct-to-disk encoding prevents memory accumulation

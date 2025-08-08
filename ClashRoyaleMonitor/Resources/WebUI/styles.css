@@ -295,8 +295,9 @@ h1 {
 
 .video-meta {
     font-size: 0.9rem;
-    color: #8bb5d9;
+    color: #ff6b6b;
     font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.2);
 }
 
 .play-btn {
@@ -315,6 +316,92 @@ h1 {
 .play-btn:hover {
     box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
     transform: translateY(-1px);
+}
+
+/* Session Grouping Styles */
+.session-group {
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 100, 200, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.session-header {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 150, 200, 0.05) 100%);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.session-header:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 150, 200, 0.08) 100%);
+}
+
+.session-info h3 {
+    margin: 0 0 5px 0;
+    color: #00d4ff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.session-meta {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+.session-toggle {
+    background: none;
+    border: none;
+    color: #00d4ff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.session-toggle:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.session-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.session-content {
+    padding: 10px 20px 20px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.session-content .video-item {
+    margin-bottom: 8px;
+}
+
+.session-content .video-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Enhanced video title for session context */
+.session-content .video-title {
+    color: #00ff88;
+    font-size: 0.95rem;
 }
 
 .empty-state {
